@@ -1,0 +1,136 @@
+Checking src\DeadlineCalculator.cpp ...
+Checking src\DeadlineCalculator.cpp: _WIN32=_WIN32...
+1/17 files checked 1% done
+Checking src\PasswordHasher.cpp ...
+2/17 files checked 3% done
+Checking src\User.cpp ...
+include\lms\User.h:27:21: performance: Function 'getUsername()' should return member 'username' by const reference. [returnByReference]
+        std::string getUsername() const;
+                    ^
+include\lms\User.h:28:21: performance: Function 'getFullName()' should return member 'fullName' by const reference. [returnByReference]
+        std::string getFullName() const;
+                    ^
+3/17 files checked 3% done
+Checking src\data\AdministrationRepository.cpp ...
+include\lms\AdministrationRepository.h:7:27: warning: Member variable 'AdminUserRow::id' has no initializer. [uninitMemberVarNoCtor]
+struct AdminUserRow { int id; std::string username, fullName, role; int active; };
+                          ^
+include\lms\AdministrationRepository.h:7:73: warning: Member variable 'AdminUserRow::active' has no initializer. [uninitMemberVarNoCtor]
+struct AdminUserRow { int id; std::string username, fullName, role; int active; };
+                                                                        ^
+include\lms\AdministrationRepository.h:8:28: warning: Member variable 'DepartmentRow::id' has no initializer. [uninitMemberVarNoCtor]
+struct DepartmentRow { int id; std::string name; int hodId; };
+                           ^
+include\lms\AdministrationRepository.h:8:54: warning: Member variable 'DepartmentRow::hodId' has no initializer. [uninitMemberVarNoCtor]
+struct DepartmentRow { int id; std::string name; int hodId; };
+                                                     ^
+include\lms\AdministrationRepository.h:9:24: warning: Member variable 'CourseRow::id' has no initializer. [uninitMemberVarNoCtor]
+struct CourseRow { int id, departmentId; std::string code, name, department; };
+                       ^
+include\lms\AdministrationRepository.h:9:28: warning: Member variable 'CourseRow::departmentId' has no initializer. [uninitMemberVarNoCtor]
+struct CourseRow { int id, departmentId; std::string code, name, department; };
+                           ^
+include\lms\AdministrationRepository.h:11:89: warning: Member variable 'ReleasedMarkRow::rawMark' has no initializer. [uninitMemberVarNoCtor]
+struct ReleasedMarkRow { std::string courseCode, assignment, feedback, markedAt; double rawMark, finalMark, maxMark; };
+                                                                                        ^
+include\lms\AdministrationRepository.h:11:98: warning: Member variable 'ReleasedMarkRow::finalMark' has no initializer. [uninitMemberVarNoCtor]
+struct ReleasedMarkRow { std::string courseCode, assignment, feedback, markedAt; double rawMark, finalMark, maxMark; };
+                                                                                                 ^
+include\lms\AdministrationRepository.h:11:109: warning: Member variable 'ReleasedMarkRow::maxMark' has no initializer. [uninitMemberVarNoCtor]
+struct ReleasedMarkRow { std::string courseCode, assignment, feedback, markedAt; double rawMark, finalMark, maxMark; };
+                                                                                                            ^
+4/17 files checked 15% done
+Checking src\data\AssignmentRepository.cpp ...
+include\lms\AssignmentRepository.h:15:13: warning: Member variable 'CourseOption::courseId' has no initializer. [uninitMemberVarNoCtor]
+        int courseId;
+            ^
+Checking src\data\AssignmentRepository.cpp: _WIN32=_WIN32...
+5/17 files checked 22% done
+Checking src\data\Database.cpp ...
+6/17 files checked 24% done
+Checking src\data\DeadlineExtensionRepository.cpp ...
+Checking src\data\DeadlineExtensionRepository.cpp: _WIN32=_WIN32...
+7/17 files checked 27% done
+Checking src\data\MarkingRepository.cpp ...
+include\lms\MarkingRepository.h:14:13: warning: Member variable 'SubmissionToMark::submissionId' has no initializer. [uninitMemberVarNoCtor]
+        int submissionId;
+            ^
+include\lms\MarkingRepository.h:15:13: warning: Member variable 'SubmissionToMark::assignmentId' has no initializer. [uninitMemberVarNoCtor]
+        int assignmentId;
+            ^
+include\lms\MarkingRepository.h:16:13: warning: Member variable 'SubmissionToMark::studentId' has no initializer. [uninitMemberVarNoCtor]
+        int studentId;
+            ^
+include\lms\MarkingRepository.h:17:13: warning: Member variable 'SubmissionToMark::attemptNumber' has no initializer. [uninitMemberVarNoCtor]
+        int attemptNumber;
+            ^
+include\lms\MarkingRepository.h:21:16: warning: Member variable 'SubmissionToMark::maxMark' has no initializer. [uninitMemberVarNoCtor]
+        double maxMark;
+               ^
+include\lms\MarkingRepository.h:36:16: warning: Member variable 'StudentReleasedMark::rawMark' has no initializer. [uninitMemberVarNoCtor]
+        double rawMark;
+               ^
+include\lms\MarkingRepository.h:37:16: warning: Member variable 'StudentReleasedMark::finalMark' has no initializer. [uninitMemberVarNoCtor]
+        double finalMark;
+               ^
+include\lms\MarkingRepository.h:38:16: warning: Member variable 'StudentReleasedMark::maxMark' has no initializer. [uninitMemberVarNoCtor]
+        double maxMark;
+               ^
+include\lms\MarkingRepository.h:45:13: warning: Member variable 'ReturnedMark::markId' has no initializer. [uninitMemberVarNoCtor]
+        int markId;
+            ^
+include\lms\MarkingRepository.h:46:13: warning: Member variable 'ReturnedMark::submissionId' has no initializer. [uninitMemberVarNoCtor]
+        int submissionId;
+            ^
+include\lms\MarkingRepository.h:49:16: warning: Member variable 'ReturnedMark::rawMark' has no initializer. [uninitMemberVarNoCtor]
+        double rawMark;
+               ^
+include\lms\MarkingRepository.h:50:16: warning: Member variable 'ReturnedMark::finalMark' has no initializer. [uninitMemberVarNoCtor]
+        double finalMark;
+               ^
+include\lms\MarkingRepository.h:51:16: warning: Member variable 'ReturnedMark::maxMark' has no initializer. [uninitMemberVarNoCtor]
+        double maxMark;
+               ^
+Checking src\data\MarkingRepository.cpp: _WIN32=_WIN32...
+8/17 files checked 42% done
+Checking src\data\ModerationRepository.cpp ...
+include\lms\ModerationRepository.h:14:13: warning: Member variable 'MarkForModeration::markId' has no initializer. [uninitMemberVarNoCtor]
+        int markId;
+            ^
+include\lms\ModerationRepository.h:15:13: warning: Member variable 'MarkForModeration::submissionId' has no initializer. [uninitMemberVarNoCtor]
+        int submissionId;
+            ^
+include\lms\ModerationRepository.h:19:16: warning: Member variable 'MarkForModeration::rawMark' has no initializer. [uninitMemberVarNoCtor]
+        double rawMark;
+               ^
+include\lms\ModerationRepository.h:20:16: warning: Member variable 'MarkForModeration::finalMark' has no initializer. [uninitMemberVarNoCtor]
+        double finalMark;
+               ^
+Checking src\data\ModerationRepository.cpp: _WIN32=_WIN32...
+9/17 files checked 59% done
+Checking src\data\SubmissionRepository.cpp ...
+Checking src\data\SubmissionRepository.cpp: _WIN32=_WIN32...
+10/17 files checked 65% done
+Checking src\data\UserRepository.cpp ...
+11/17 files checked 69% done
+Checking src\main.cpp ...
+12/17 files checked 98% done
+Checking src\models\Administrator.cpp ...
+13/17 files checked 98% done
+Checking src\models\Assignment.cpp ...
+include\lms\models\Assignment.h:31:21: performance: Function 'getTitle()' should return member 'title' by const reference. [returnByReference]
+        std::string getTitle() const;
+                    ^
+include\lms\models\Assignment.h:32:21: performance: Function 'getDescription()' should return member 'description' by const reference. [returnByReference]
+        std::string getDescription() const;
+                    ^
+include\lms\models\Assignment.h:33:21: performance: Function 'getDeadline()' should return member 'deadline' by const reference. [returnByReference]
+        std::string getDeadline() const;
+                    ^
+14/17 files checked 99% done
+Checking src\models\HeadOfDepartment.cpp ...
+15/17 files checked 99% done
+Checking src\models\Lecturer.cpp ...
+16/17 files checked 99% done
+Checking src\models\Student.cpp ...
+17/17 files checked 100% done

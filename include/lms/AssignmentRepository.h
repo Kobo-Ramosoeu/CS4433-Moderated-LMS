@@ -1,4 +1,3 @@
-
 #ifndef LMS_ASSIGNMENT_REPOSITORY_H
 #define LMS_ASSIGNMENT_REPOSITORY_H
 
@@ -8,37 +7,36 @@
 #include <string>
 #include <vector>
 
-namespace lms
-{
-    struct CourseOption
-    {
-        int courseId;
-        std::string courseCode;
-        std::string courseName;
-    };
+namespace lms {
 
-    class AssignmentRepository
-    {
-    private:
-        Database& database;
+struct CourseOption {
+    int courseId{};
+    std::string courseCode;
+    std::string courseName;
+};
 
-    public:
-        explicit AssignmentRepository(Database& database);
+class AssignmentRepository {
+private:
+    Database& database;
 
-        std::vector<CourseOption> getCoursesForLecturer(
-            int lecturerId);
+public:
+    explicit AssignmentRepository(Database& database);
 
-        void createAssignment(
-            int lecturerId,
-            int courseId,
-            const std::string& title,
-            const std::string& description,
-            const std::string& deadline,
-            double maxMark);
+    std::vector<CourseOption> getCoursesForLecturer(int lecturerId);
 
-        std::vector<Assignment> getAssignmentsForLecturer(int lecturerId);
-        std::vector<Assignment> getAssignmentsForStudent(int studentId);
-    };
+    void createAssignment(
+        int lecturerId,
+        int courseId,
+        const std::string& title,
+        const std::string& description,
+        const std::string& deadline,
+        double maxMark
+    );
+
+    std::vector<Assignment> getAssignmentsForLecturer(int lecturerId);
+    std::vector<Assignment> getAssignmentsForStudent(int studentId);
+};
+
 }
 
 #endif
