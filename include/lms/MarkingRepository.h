@@ -1,4 +1,3 @@
-
 #ifndef LMS_MARKING_REPOSITORY_H
 #define LMS_MARKING_REPOSITORY_H
 
@@ -7,79 +6,78 @@
 #include <string>
 #include <vector>
 
-namespace lms
-{
-    struct SubmissionToMark
-    {
-        int submissionId;
-        int assignmentId;
-        int studentId;
-        int attemptNumber;
-        std::string assignmentTitle;
-        std::string studentNumber;
-        std::string submittedAt;
-        double maxMark;
-    };
+namespace lms {
 
-    struct MarkingResult
-    {
-        int daysLate;
-        double rawMark;
-        double penalty;
-        double finalMark;
-    };
+struct SubmissionToMark {
+    int submissionId{};
+    int assignmentId{};
+    int studentId{};
+    int attemptNumber{};
+    std::string assignmentTitle;
+    std::string studentNumber;
+    std::string submittedAt;
+    double maxMark{};
+};
 
-    struct StudentReleasedMark
-    {
-        std::string assignmentTitle;
-        std::string courseCode;
-        double rawMark;
-        double finalMark;
-        double maxMark;
-        std::string feedback;
-        std::string markedAt;
-    };
+struct MarkingResult {
+    int daysLate{};
+    double rawMark{};
+    double penalty{};
+    double finalMark{};
+};
 
-    struct ReturnedMark
-    {
-        int markId;
-        int submissionId;
-        std::string assignmentTitle;
-        std::string studentNumber;
-        double rawMark;
-        double finalMark;
-        double maxMark;
-        std::string feedback;
-        std::string correctionReason;
-    };
+struct StudentReleasedMark {
+    std::string assignmentTitle;
+    std::string courseCode;
+    double rawMark{};
+    double finalMark{};
+    double maxMark{};
+    std::string feedback;
+    std::string markedAt;
+};
 
-    class MarkingRepository
-    {
-    private:
-        Database& database;
+struct ReturnedMark {
+    int markId{};
+    int submissionId{};
+    std::string assignmentTitle;
+    std::string studentNumber;
+    double rawMark{};
+    double finalMark{};
+    double maxMark{};
+    std::string feedback;
+    std::string correctionReason;
+};
 
-    public:
-        explicit MarkingRepository(Database& database);
+class MarkingRepository {
+private:
+    Database& database;
 
-        std::vector<StudentReleasedMark> getReleasedMarksForStudent(int studentId);
+public:
+    explicit MarkingRepository(Database& database);
 
-        std::vector<SubmissionToMark> getSubmissionsForLecturer(
-            int lecturerId);
+    std::vector<StudentReleasedMark> getReleasedMarksForStudent(int studentId);
 
-        std::vector<ReturnedMark> getReturnedMarksForLecturer(int lecturerId);
+    std::vector<SubmissionToMark> getSubmissionsForLecturer(
+        int lecturerId
+    );
 
-        MarkingResult correctReturnedMark(
-            int lecturerId,
-            int markId,
-            double rawMark,
-            const std::string& feedback);
+    std::vector<ReturnedMark> getReturnedMarksForLecturer(int lecturerId);
 
-        MarkingResult enterMark(
-            int lecturerId,
-            int submissionId,
-            double rawMark,
-            const std::string& feedback);
-    };
+    MarkingResult correctReturnedMark(
+        int lecturerId,
+        int markId,
+        double rawMark,
+        const std::string& feedback
+    );
+
+    MarkingResult enterMark(
+        int lecturerId,
+        int submissionId,
+        double rawMark,
+        const std::string& feedback
+    );
+};
+
 }
 
 #endif

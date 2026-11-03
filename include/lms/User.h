@@ -3,32 +3,32 @@
 
 #include <string>
 
-namespace lms
-{
-    class User
-    {
-    private:
-        int userId;
-        std::string username;
-        std::string passwordHash;
-        std::string fullName;
+namespace lms {
 
-    public:
-        User(
-            int userId,
-            const std::string& username,
-            const std::string& passwordHash,
-            const std::string& fullName
-        );
+class User {
+private:
+    int userId;
+    std::string username;
+    std::string passwordHash;
+    std::string fullName;
 
-        virtual ~User() = default;
+public:
+    User(
+        int userId,
+        const std::string& username,
+        const std::string& passwordHash,
+        const std::string& fullName
+    );
 
-        int getUserId() const;
-        std::string getUsername() const;
-        std::string getFullName() const;
+    virtual ~User() = default;
 
-        virtual std::string getRole() const = 0;
-    };
+    int getUserId() const;
+    const std::string& getUsername() const;
+    const std::string& getFullName() const;
+
+    virtual std::string getRole() const = 0;
+};
+
 }
 
 #endif

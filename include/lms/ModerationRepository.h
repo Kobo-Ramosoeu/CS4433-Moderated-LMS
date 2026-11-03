@@ -1,4 +1,3 @@
-
 #ifndef LMS_MODERATION_REPOSITORY_H
 #define LMS_MODERATION_REPOSITORY_H
 
@@ -7,50 +6,48 @@
 #include <string>
 #include <vector>
 
-namespace lms
-{
-    struct MarkForModeration
-    {
-        int markId;
-        int submissionId;
-        std::string assignmentTitle;
-        std::string studentNumber;
-        std::string lecturerName;
-        double rawMark;
-        double finalMark;
-        std::string feedback;
-        std::string status;
-    };
+namespace lms {
 
-    class ModerationRepository
-    {
-    private:
-        Database& database;
+struct MarkForModeration {
+    int markId{};
+    int submissionId{};
+    std::string assignmentTitle;
+    std::string studentNumber;
+    std::string lecturerName;
+    double rawMark{};
+    double finalMark{};
+    std::string feedback;
+    std::string status;
+};
 
-    public:
-        explicit ModerationRepository(Database& database);
+class ModerationRepository {
+private:
+    Database& database;
 
-        std::vector<MarkForModeration>
-        getMarksAwaitingModeration(int hodId);
+public:
+    explicit ModerationRepository(Database& database);
 
-        std::vector<MarkForModeration> getApprovedMarksForRelease(int hodId);
+    std::vector<MarkForModeration> getMarksAwaitingModeration(int hodId);
 
-        int releaseApprovedMarks(int hodId);
+    std::vector<MarkForModeration> getApprovedMarksForRelease(int hodId);
 
-        void moderateMark(
-            int hodId,
-            int markId,
-            const std::string& decision,
-            const std::string& reason
-        );
+    int releaseApprovedMarks(int hodId);
 
-        void adjustMark(
-            int hodId,
-            int markId,
-            double newRawMark,
-            const std::string& reason
-        );
-    };
+    void moderateMark(
+        int hodId,
+        int markId,
+        const std::string& decision,
+        const std::string& reason
+    );
+
+    void adjustMark(
+        int hodId,
+        int markId,
+        double newRawMark,
+        const std::string& reason
+    );
+};
+
 }
 
 #endif
