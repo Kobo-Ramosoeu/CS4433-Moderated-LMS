@@ -1,0 +1,29 @@
+Test project C:/Users/windows 10/Documents/CS4433-Moderated-LMS/build-coverage
+      Start  1: Submission at or before deadline receives no penalty
+ 1/12 Test  #1: Submission at or before deadline receives no penalty .........   Passed    0.04 sec
+      Start  2: Submission less than one full day late receives no penalty
+ 2/12 Test  #2: Submission less than one full day late receives no penalty ...   Passed    0.08 sec
+      Start  3: Late penalty increases by ten percent per completed day
+ 3/12 Test  #3: Late penalty increases by ten percent per completed day ......   Passed    0.04 sec
+      Start  4: Submission more than three days late receives zero
+ 4/12 Test  #4: Submission more than three days late receives zero ...........   Passed    0.03 sec
+      Start  5: Late penalty cannot produce a negative final mark
+ 5/12 Test  #5: Late penalty cannot produce a negative final mark ............   Passed    0.03 sec
+      Start  6: Invalid marks are rejected
+ 6/12 Test  #6: Invalid marks are rejected ...................................   Passed    0.02 sec
+      Start  7: Invalid timestamps are rejected
+ 7/12 Test  #7: Invalid timestamps are rejected ..............................   Passed    0.24 sec
+      Start  8: late_penalty_boundaries
+ 8/12 Test  #8: late_penalty_boundaries ......................................   Passed    0.03 sec
+      Start  9: repository_integration
+ 9/12 Test  #9: repository_integration .......................................   Passed    1.29 sec
+      Start 10: submission_workflow
+10/12 Test #10: submission_workflow ..........................................   Passed    1.17 sec
+      Start 11: mark_moderation_release
+11/12 Test #11: mark_moderation_release ......................................   Passed    1.64 sec
+      Start 12: database_tests
+12/12 Test #12: database_tests ...............................................   Passed    0.33 sec
+
+100% tests passed out of 12
+
+Total Test time (real) =   4.99 sec

@@ -1,6 +1,8 @@
 # Build directories
 /build/
 /build-phase4/
+/build-coverage/
+/cmake-build-*/
 
 # Executables and object files
 *.exe
@@ -22,3 +24,8 @@ CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+
+# Generated coverage files
+*.gcda
+*.gcno
+*.gcov

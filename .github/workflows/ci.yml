@@ -1,0 +1,52 @@
+name: Moderated LMS CI
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    name: Build and Test (Windows / MSYS2 UCRT64)
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        shell: msys2 {0}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up MSYS2 UCRT64
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: UCRT64
+          update: true
+          install: >-
+            mingw-w64-ucrt-x86_64-gcc
+            mingw-w64-ucrt-x86_64-cmake
+            mingw-w64-ucrt-x86_64-make
+            mingw-w64-ucrt-x86_64-sqlite3
+            mingw-w64-ucrt-x86_64-argon2
+
+      - name: Verify compiler and CMake
+        run: |
+          g++ --version
+          cmake --version
+
+      - name: Configure project
+        run: >
+          cmake -S . -B build-ci
+          -G "MinGW Makefiles"
+          -DCMAKE_CXX_COMPILER=g++
+          -DLMS_ENABLE_COVERAGE=OFF
+
+      - name: Build application and test targets
+        run: cmake --build build-ci --parallel 4
+
+      - name: Run automated tests
+        run: ctest --test-dir build-ci --output-on-failure
