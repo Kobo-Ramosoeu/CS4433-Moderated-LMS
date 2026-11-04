@@ -90,3 +90,23 @@ ctest --test-dir build-phase4 --output-on-failure
 ```
 
 The successful build and automated tests do not, by themselves, establish that every interactive role workflow has been manually tested.
+
+
+## Project phases and supporting documentation
+
+- [Phase 1 — Project Planning](Phase-1-Project-Planning/README.md)
+- [Phase 2 — Requirements Engineering](Phase-2-Requirements-Engineering/README.md)
+- [Phase 3 — System Design](Phase-3-System-Design/README.md)
+- [Phase 4 — Implementation](Phase-4-Implementation/README.md)
+- [Phase 5 — Verification and Validation](Phase-5-Verification-Validation/)
+- [Phase 6 — Configuration Management and QA](Phase-6-Configuration-Management-QA/README.md)
+- [Phase 7 — Deployment](Phase-7-Deployment/README.md)
+- [Phase 8 — Maintenance and Handover](Phase-8-Maintenance/README.md)
+
+## Final submission artefacts
+
+The final submission report, project diagrams and presentation recording should be stored in the repository submission folder/root as required by the course instructions. The recording is named `LMS Presentation.mp4`. Verify that the report PDF, diagram image files and recording are visible on the GitHub `main` branch before submitting the repository link.
+
+## Known acceptance conditions
+
+The recorded automated baseline is 12/12 CTest tests passed. Manual role-based acceptance checks, deployment verification and the whole-class extension visibility check must still be executed and recorded before claiming full operational acceptance. The specification conflict for first submissions more than 72 hours late is documented in Phase 8.
